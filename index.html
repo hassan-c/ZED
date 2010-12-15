@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>ZED</title>
+		<style type="text/css">
+			body{font-family:Arial, Helvetica, Sans-serif;font-size:13px;}
+			h1, h2, h3, h4, h5, h6{margin:0;}
+			#panel{margin:0 auto;padding:10px;width:375px;border-top:2px solid #EEE;border-bottom:2px solid #EEE;}
+			#panel p a{display:block;}
+			
+			#step2, #step3, #end{display:none;}
+		</style>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script> 
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				$('#step1 :button').click(function()
+				{
+					$('#step1').hide('medium');
+					$('#step2').show('medium');
+				});
+				
+				$('#step2 :button').click(function()
+				{
+					$('#step2').hide('medium');
+					$('#step3').show('medium');
+				});
+				
+				$('#step3 :button').click(function()
+				{
+					$('#step3').hide('medium');
+					$('#end').show('medium');
+				});
+				
+				$('#ok').click(function()
+				{
+					$(this).attr('disabled', 'disabled');
+				});
+				
+			});
+		
+		</script>
+	</head>
+	<body>
+		<div id="panel">
+			<div id="step1">
+				<h2>ZED</h2>
+				<p>
+					<p>To get started with ZED, click the Run Setup button below.</p>
+					<p>Setup will check that all prerequisites have been fulfilled and automatically rectify any problems that occur.</p>
+					<input type="button" value="Run Setup...">
+				</p>
+			</div>
+			
+			<div id="step2">
+				<h2>ZED: Step 2</h2>
+				<p>
+					<p>There may be updates available to enhance the functionality of ZED. If you are running an older version of ZED, these updates will upgrade it to the latest and greatest version.</p>
+					<p>To download these updates, click the Check for updates button below.</p>
+					<input type="button" value="Check for updates..."> <input type="button" value="Skip">
+				</p>
+			</div>
+			
+			<div id="step3">
+				<h2>ZED: Step 3</h2>
+				<p>
+					<p>ZED is now ready for use.</p>
+					<p>Thank you for installing ZED.</p>
+					<input type="button" value="Finish">
+				</p>
+			</div>
+			
+			<div id="end">
+				<h2>Information</h2>
+				<p>
+					<p>ZED has been successfully installed but it is only in the development stage so cannot be used in production at the moment, sorry!</p>
+					<p>To get the latest source code, fork and locally clone the repository on GitHub. Contribute any changes by sending pull requests to help ZED reach a usable state quicker!</p>
+					<p>Thank you.</p>
+					<input type="button" value="OK" id="ok">
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
